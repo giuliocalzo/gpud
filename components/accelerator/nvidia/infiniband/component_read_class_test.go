@@ -50,8 +50,8 @@ func TestComponentReadClass(t *testing.T) {
 		getThresholdsFunc: func() types.ExpectedPortStates {
 			return threshold
 		},
-		getClassDevicesFunc: func() (infinibandclass.Devices, error) {
-			return infinibandclass.LoadDevices(classRootDir)
+		getClassDevicesFunc: func(ignoreFiles map[string]struct{}) (infinibandclass.Devices, error) {
+			return infinibandclass.LoadDevices(classRootDir, infinibandclass.WithIgnoreFiles(ignoreFiles))
 		},
 	}
 
@@ -317,8 +317,8 @@ func TestComponentReadClass_FlapDetection(t *testing.T) {
 			getThresholdsFunc: func() types.ExpectedPortStates {
 				return threshold
 			},
-			getClassDevicesFunc: func() (infinibandclass.Devices, error) {
-				return infinibandclass.LoadDevices(classRootDir)
+			getClassDevicesFunc: func(ignoreFiles map[string]struct{}) (infinibandclass.Devices, error) {
+				return infinibandclass.LoadDevices(classRootDir, infinibandclass.WithIgnoreFiles(ignoreFiles))
 			},
 		}
 
@@ -380,8 +380,8 @@ func TestComponentReadClass_FlapDetection(t *testing.T) {
 			getThresholdsFunc: func() types.ExpectedPortStates {
 				return threshold
 			},
-			getClassDevicesFunc: func() (infinibandclass.Devices, error) {
-				return infinibandclass.LoadDevices(classRootDir)
+			getClassDevicesFunc: func(ignoreFiles map[string]struct{}) (infinibandclass.Devices, error) {
+				return infinibandclass.LoadDevices(classRootDir, infinibandclass.WithIgnoreFiles(ignoreFiles))
 			},
 		}
 
@@ -432,8 +432,8 @@ func TestComponentReadClass_FlapDetection(t *testing.T) {
 			getThresholdsFunc: func() types.ExpectedPortStates {
 				return threshold
 			},
-			getClassDevicesFunc: func() (infinibandclass.Devices, error) {
-				return infinibandclass.LoadDevices(classRootDir)
+			getClassDevicesFunc: func(ignoreFiles map[string]struct{}) (infinibandclass.Devices, error) {
+				return infinibandclass.LoadDevices(classRootDir, infinibandclass.WithIgnoreFiles(ignoreFiles))
 			},
 		}
 
@@ -500,8 +500,8 @@ func TestComponentReadClass_DropDetection(t *testing.T) {
 			getThresholdsFunc: func() types.ExpectedPortStates {
 				return threshold
 			},
-			getClassDevicesFunc: func() (infinibandclass.Devices, error) {
-				return infinibandclass.LoadDevices(classRootDir)
+			getClassDevicesFunc: func(ignoreFiles map[string]struct{}) (infinibandclass.Devices, error) {
+				return infinibandclass.LoadDevices(classRootDir, infinibandclass.WithIgnoreFiles(ignoreFiles))
 			},
 		}
 
@@ -554,8 +554,8 @@ func TestComponentReadClass_DropDetection(t *testing.T) {
 			getThresholdsFunc: func() types.ExpectedPortStates {
 				return threshold
 			},
-			getClassDevicesFunc: func() (infinibandclass.Devices, error) {
-				return infinibandclass.LoadDevices(classRootDir)
+			getClassDevicesFunc: func(ignoreFiles map[string]struct{}) (infinibandclass.Devices, error) {
+				return infinibandclass.LoadDevices(classRootDir, infinibandclass.WithIgnoreFiles(ignoreFiles))
 			},
 		}
 
@@ -602,8 +602,8 @@ func TestComponentReadClass_DropDetection(t *testing.T) {
 			getThresholdsFunc: func() types.ExpectedPortStates {
 				return threshold
 			},
-			getClassDevicesFunc: func() (infinibandclass.Devices, error) {
-				return infinibandclass.LoadDevices(classRootDir)
+			getClassDevicesFunc: func(ignoreFiles map[string]struct{}) (infinibandclass.Devices, error) {
+				return infinibandclass.LoadDevices(classRootDir, infinibandclass.WithIgnoreFiles(ignoreFiles))
 			},
 		}
 
@@ -678,8 +678,8 @@ func TestComponentReadClass_CombinedFlapAndDrop(t *testing.T) {
 			getThresholdsFunc: func() types.ExpectedPortStates {
 				return threshold
 			},
-			getClassDevicesFunc: func() (infinibandclass.Devices, error) {
-				return infinibandclass.LoadDevices(classRootDir)
+			getClassDevicesFunc: func(ignoreFiles map[string]struct{}) (infinibandclass.Devices, error) {
+				return infinibandclass.LoadDevices(classRootDir, infinibandclass.WithIgnoreFiles(ignoreFiles))
 			},
 		}
 
@@ -766,8 +766,8 @@ func TestComponentReadClass_ErrorCounterRates(t *testing.T) {
 			getThresholdsFunc: func() types.ExpectedPortStates {
 				return threshold
 			},
-			getClassDevicesFunc: func() (infinibandclass.Devices, error) {
-				return infinibandclass.LoadDevices(classRootDir)
+			getClassDevicesFunc: func(ignoreFiles map[string]struct{}) (infinibandclass.Devices, error) {
+				return infinibandclass.LoadDevices(classRootDir, infinibandclass.WithIgnoreFiles(ignoreFiles))
 			},
 		}
 
@@ -806,8 +806,8 @@ func TestComponentReadClass_ErrorCounterRates(t *testing.T) {
 			getThresholdsFunc: func() types.ExpectedPortStates {
 				return threshold
 			},
-			getClassDevicesFunc: func() (infinibandclass.Devices, error) {
-				return infinibandclass.LoadDevices(classRootDir)
+			getClassDevicesFunc: func(ignoreFiles map[string]struct{}) (infinibandclass.Devices, error) {
+				return infinibandclass.LoadDevices(classRootDir, infinibandclass.WithIgnoreFiles(ignoreFiles))
 			},
 		}
 
@@ -856,8 +856,8 @@ func TestComponentReadClass_ErrorCounterRates(t *testing.T) {
 			getThresholdsFunc: func() types.ExpectedPortStates {
 				return threshold
 			},
-			getClassDevicesFunc: func() (infinibandclass.Devices, error) {
-				return infinibandclass.LoadDevices(classRootDir)
+			getClassDevicesFunc: func(ignoreFiles map[string]struct{}) (infinibandclass.Devices, error) {
+				return infinibandclass.LoadDevices(classRootDir, infinibandclass.WithIgnoreFiles(ignoreFiles))
 			},
 		}
 
@@ -918,8 +918,8 @@ func TestComponentReadClass_EdgeCases(t *testing.T) {
 			getThresholdsFunc: func() types.ExpectedPortStates {
 				return threshold
 			},
-			getClassDevicesFunc: func() (infinibandclass.Devices, error) {
-				return infinibandclass.LoadDevices(classRootDir)
+			getClassDevicesFunc: func(ignoreFiles map[string]struct{}) (infinibandclass.Devices, error) {
+				return infinibandclass.LoadDevices(classRootDir, infinibandclass.WithIgnoreFiles(ignoreFiles))
 			},
 		}
 
@@ -966,8 +966,8 @@ func TestComponentReadClass_EdgeCases(t *testing.T) {
 			getThresholdsFunc: func() types.ExpectedPortStates {
 				return threshold
 			},
-			getClassDevicesFunc: func() (infinibandclass.Devices, error) {
-				return infinibandclass.LoadDevices(subClassRootDir)
+			getClassDevicesFunc: func(ignoreFiles map[string]struct{}) (infinibandclass.Devices, error) {
+				return infinibandclass.LoadDevices(subClassRootDir, infinibandclass.WithIgnoreFiles(ignoreFiles))
 			},
 		}
 
@@ -1018,8 +1018,8 @@ func TestComponentReadClass_EdgeCases(t *testing.T) {
 			getThresholdsFunc: func() types.ExpectedPortStates {
 				return threshold
 			},
-			getClassDevicesFunc: func() (infinibandclass.Devices, error) {
-				return infinibandclass.LoadDevices(classRootDir)
+			getClassDevicesFunc: func(ignoreFiles map[string]struct{}) (infinibandclass.Devices, error) {
+				return infinibandclass.LoadDevices(classRootDir, infinibandclass.WithIgnoreFiles(ignoreFiles))
 			},
 		}
 
@@ -1065,8 +1065,8 @@ func TestComponentReadClass_EdgeCases(t *testing.T) {
 			getThresholdsFunc: func() types.ExpectedPortStates {
 				return threshold
 			},
-			getClassDevicesFunc: func() (infinibandclass.Devices, error) {
-				return infinibandclass.LoadDevices(classRootDir)
+			getClassDevicesFunc: func(ignoreFiles map[string]struct{}) (infinibandclass.Devices, error) {
+				return infinibandclass.LoadDevices(classRootDir, infinibandclass.WithIgnoreFiles(ignoreFiles))
 			},
 		}
 
@@ -1181,10 +1181,10 @@ func TestComponentReadClass_12PortsMeetingThresholdsWithEvents(t *testing.T) {
 			getThresholdsFunc: func() types.ExpectedPortStates {
 				return threshold
 			},
-			getClassDevicesFunc: func() (infinibandclass.Devices, error) {
+			getClassDevicesFunc: func(ignoreFiles map[string]struct{}) (infinibandclass.Devices, error) {
 				// The test data has 8 InfiniBand ports (mlx5_0, mlx5_1, mlx5_4-9)
 				// We'll modify some to be down but still meet the threshold
-				return infinibandclass.LoadDevices(classRootDir)
+				return infinibandclass.LoadDevices(classRootDir, infinibandclass.WithIgnoreFiles(ignoreFiles))
 			},
 		}
 
@@ -1281,8 +1281,8 @@ func TestComponentReadClass_12PortsMeetingThresholdsWithEvents(t *testing.T) {
 			getThresholdsFunc: func() types.ExpectedPortStates {
 				return threshold
 			},
-			getClassDevicesFunc: func() (infinibandclass.Devices, error) {
-				return infinibandclass.LoadDevices(classRootDir)
+			getClassDevicesFunc: func(ignoreFiles map[string]struct{}) (infinibandclass.Devices, error) {
+				return infinibandclass.LoadDevices(classRootDir, infinibandclass.WithIgnoreFiles(ignoreFiles))
 			},
 		}
 
@@ -1391,11 +1391,11 @@ func TestComponentReadClass_RealisticScenarioWith12IBPorts(t *testing.T) {
 			getThresholdsFunc: func() types.ExpectedPortStates {
 				return threshold
 			},
-			getClassDevicesFunc: func() (infinibandclass.Devices, error) {
+			getClassDevicesFunc: func(ignoreFiles map[string]struct{}) (infinibandclass.Devices, error) {
 				// Mock the realistic scenario based on ibstat output
 				// Note: The test data directory might not have all these devices,
 				// so we'll configure the available ones to match the pattern
-				return infinibandclass.LoadDevices(classRootDir)
+				return infinibandclass.LoadDevices(classRootDir, infinibandclass.WithIgnoreFiles(ignoreFiles))
 			},
 		}
 
@@ -1489,8 +1489,8 @@ func TestComponentReadClass_RealisticScenarioWith12IBPorts(t *testing.T) {
 			getThresholdsFunc: func() types.ExpectedPortStates {
 				return threshold
 			},
-			getClassDevicesFunc: func() (infinibandclass.Devices, error) {
-				return infinibandclass.LoadDevices(subClassRootDir)
+			getClassDevicesFunc: func(ignoreFiles map[string]struct{}) (infinibandclass.Devices, error) {
+				return infinibandclass.LoadDevices(subClassRootDir, infinibandclass.WithIgnoreFiles(ignoreFiles))
 			},
 		}
 
@@ -1592,8 +1592,8 @@ func TestComponentReadClass_RealisticScenarioWith12IBPorts(t *testing.T) {
 			getThresholdsFunc: func() types.ExpectedPortStates {
 				return threshold
 			},
-			getClassDevicesFunc: func() (infinibandclass.Devices, error) {
-				return infinibandclass.LoadDevices(subClassRootDir)
+			getClassDevicesFunc: func(ignoreFiles map[string]struct{}) (infinibandclass.Devices, error) {
+				return infinibandclass.LoadDevices(subClassRootDir, infinibandclass.WithIgnoreFiles(ignoreFiles))
 			},
 		}
 
@@ -1681,8 +1681,8 @@ func TestComponentReadClass_RealisticScenarioWith12IBPorts(t *testing.T) {
 			getThresholdsFunc: func() types.ExpectedPortStates {
 				return threshold
 			},
-			getClassDevicesFunc: func() (infinibandclass.Devices, error) {
-				return infinibandclass.LoadDevices(subClassRootDir)
+			getClassDevicesFunc: func(ignoreFiles map[string]struct{}) (infinibandclass.Devices, error) {
+				return infinibandclass.LoadDevices(subClassRootDir, infinibandclass.WithIgnoreFiles(ignoreFiles))
 			},
 		}
 
